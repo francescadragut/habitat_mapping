@@ -1,0 +1,20 @@
+name: habitat-mapping
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - gdal
+  - rasterio
+  - geopandas
+  - shapely
+  - fiona
+  - pyproj
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - scikit-image
+  - xarray
+  - rtree
+  - libspatialindex
+  - tqdm
