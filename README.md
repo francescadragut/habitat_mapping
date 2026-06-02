@@ -14,9 +14,9 @@ The sampling strategy was random but stratified on the biogeographical regions o
 
 ## Data
 ### Orthophotots
-**Source**: https://www.swisstopo.admin.ch/en/orthoimage-swissimage-10, resampled to 1m spatial resolution by WSL
-**Year**: 2024
-**Preprocessing for this study**: 
+**Source**: https://www.swisstopo.admin.ch/en/orthoimage-swissimage-10, resampled to 1m spatial resolution by WSL\
+**Year**: 2024\
+**Preprocessing for this study**: \
 The data used in this study consists of 1m resolution Swiss aerial orthomaps from 2024. The original orthomaps are 16-bit 4-band images (RGB-NIR). For each area, the corresponding image was converted to grayscale using Equation 1. Then the values were scaled to 8-bit values using the 98th percentile, to normalize the histogram and remove extreme values.
 
 <div align="center">
@@ -30,6 +30,26 @@ The data used in this study consists of 1m resolution Swiss aerial orthomaps fro
 </div>
 
 ### Habitat Map of Switzerland
-**Source**: https://www.envidat.ch/#/metadata/the-habitat-map-of-switzerland-v1-1 rasterized on class level by WSL
-**DOI**: 10.16904/envidat.515
-**Year**: 2022
+**Source**: https://www.envidat.ch/#/metadata/the-habitat-map-of-switzerland-v1-1 rasterized on class level by WSL\
+**DOI**: 10.16904/envidat.515\
+**Year**: 2022\
+
+### National Forest Inventory (NFI)
+The National Forest Inventory is a project of the WSL in collaboration with the Federal Office for the Environment (FOEN). The forest inventory is based on nation-wide LiDAR scans. The forest types are classified using the following rules:\
+- 1 = closed_forest (> 60% average Deckungsgrad)
+- 2 = open forest (< 60 % & > 20 % average Deckungsgrad)
+- 3 = shrub forest (separate WSL-obtained Sentinel 2 model, overrules all other forest types)
+
+## Results
+| IoU | Iteration 1 | Iteration 2 | Iteration 3 |
+| --- | --- | --- | --- |
+| Mean | 0.2964 | 0.2907 | 0.3136 |
+| Class 1 | 0.0508 | 0.1017 | 0.2289 |
+| Class 2 | 0.0000 | 0.0000 | 0.0000 |
+| Class 3 | 0.5734 | 0.3972 | 0.4106 |
+| Class 4 | 0.5445 | 0.5190 | 0.5206 |
+| Class 5 | 0.0010 | 0.0000 | 0.0019 |
+| Class 6 | 0.8007 | 0.8272 | 0.8227 |
+| Class 7 | 0.0000 | 0.0000 | 0.0000 |
+| Class 8 | 0.3992 | 0.4510 | 0.4987 |
+| Class 9 | 0.2978 | 0.3198 | 0.3393 |
