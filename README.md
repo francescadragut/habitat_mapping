@@ -40,6 +40,9 @@ The National Forest Inventory is a project of the WSL in collaboration with the 
 - 2 = open forest (< 60 % & > 20 % average Deckungsgrad)
 - 3 = shrub forest (separate WSL-obtained Sentinel 2 model, overrules all other forest types)
 
+## Model architecture
+
+
 ## Results
 | IoU | Iteration 1 | Iteration 2 | Iteration 3 |
 | --- | --- | --- | --- |
