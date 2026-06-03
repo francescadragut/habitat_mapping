@@ -6,7 +6,7 @@ The sampling strategy was random but stratified on the biogeographical regions o
 
 <div align="center">
 
-  <img src="https://github.com/user-attachments/assets/9ad707c7-0b4f-4d1e-a651-42eb7a45fcce" alt="Habitat Mapping Example" width="600" />
+  <img src="https://github.com/user-attachments/assets/9ad707c7-0b4f-4d1e-a651-42eb7a45fcce" alt="Habitat Mapping Example" width="800" />
 
   *Figure 1: Example of habitat mapping output from our model.*
 
@@ -78,6 +78,7 @@ The National Forest Inventory is a project of the WSL in collaboration with the 
   - Cropland still misclassified as grassland
   - Built habitats still misclassified as grassland
 <img width="1000" alt="confusion_matrix_it2" src="https://github.com/user-attachments/assets/1dfd80f7-828b-4214-8d22-9473d95a181a" />
+  
 
 ### Iteration 3
 - **Confusion matrix visualization**:
@@ -85,6 +86,15 @@ The National Forest Inventory is a project of the WSL in collaboration with the 
   - Same patterns for wetlands, pioneer vegetation and shrubbery as in iteration 1 and 2
   - Same pattern for rock misclassified as grassland compared to iteration 2
   - Increased misclassification of grassland as cropland, but decreased misclassification of cropland as grassland
-  - 
 <img width="1000" alt="confusion_matrix_it3" src="https://github.com/user-attachments/assets/e2833e0a-167f-4076-821a-e77c8b1e8a1c" />
 
+## Model performance
+Similar training-validation loss curve pattern for all three iterations (example in Figure 2). The training curve is stable, while the validation curve is unstable and has peaks especially in epochs 2, 8, 13, 23, 25, 26, 29 and 30. The model used for inference was the one with the lowest validation loss to ensure a generalizable model which is not overfitted on the training data.
+
+<div align="center">
+
+  <img width="1498" height="661" alt="training_validation_loss_it3" src="https://github.com/user-attachments/assets/945d2811-f9aa-4e2b-b23b-334158e67a89" />
+
+  *Figure 2: Training-validation loss curve for iteration 3.*
+
+</div>
