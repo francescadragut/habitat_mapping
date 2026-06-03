@@ -46,7 +46,7 @@ The National Forest Inventory is a project of the WSL in collaboration with the 
 ## Results
 | IoU | Iteration 1 | Iteration 2 | Iteration 3 |
 | --- | --- | --- | --- |
-| **Mean** | 0.2964 | 0.2907 | 0.3136 |
+| **Mean** | **0.2964** | **0.2907** | **0.3136** |
 | **Class 1** | 0.0508 | 0.1017 | 0.2289 |
 | **Class 2** | 0.0000 | 0.0000 | 0.0000 |
 | **Class 3** | 0.5734 | 0.3972 | 0.4106 |
