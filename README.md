@@ -16,7 +16,7 @@ The sampling strategy was random but stratified on the biogeographical regions o
 ### Orthophotots
 **Source**: https://www.swisstopo.admin.ch/en/orthoimage-swissimage-10, resampled to 1m spatial resolution by WSL\
 **Year**: 2024\
-**Preprocessing for this study**: \
+**Preprocessing for this study**:\
 The data used in this study consists of 1m resolution Swiss aerial orthomaps from 2024. The original orthomaps are 16-bit 4-band images (RGB-NIR). For each area, the corresponding image was converted to grayscale using Equation 1. Then the values were scaled to 8-bit values using the 98th percentile, to normalize the histogram and remove extreme values.
 
 <div align="center">
@@ -32,10 +32,10 @@ The data used in this study consists of 1m resolution Swiss aerial orthomaps fro
 ### Habitat Map of Switzerland
 **Source**: https://www.envidat.ch/#/metadata/the-habitat-map-of-switzerland-v1-1 rasterized on class level by WSL\
 **DOI**: 10.16904/envidat.515\
-**Year**: 2022\
+**Year**: 2022
 
 ### National Forest Inventory (NFI)
-The National Forest Inventory is a project of the WSL in collaboration with the Federal Office for the Environment (FOEN). The forest inventory is based on nation-wide LiDAR scans. The forest types are classified using the following rules:\
+The National Forest Inventory is a project of the WSL in collaboration with the Federal Office for the Environment (FOEN). The forest inventory is based on nation-wide LiDAR scans. The forest types are classified using the following rules:
 - 1 = closed_forest (> 60% average Deckungsgrad)
 - 2 = open forest (< 60 % & > 20 % average Deckungsgrad)
 - 3 = shrub forest (separate WSL-obtained Sentinel 2 model, overrules all other forest types)
@@ -91,6 +91,12 @@ The National Forest Inventory is a project of the WSL in collaboration with the 
 ## Model performance
 Similar training-validation loss curve pattern for all three iterations (example in Figure 2). The training curve is stable, while the validation curve is unstable and has peaks especially in epochs 2, 8, 13, 23, 25, 26, 29 and 30. The model used for inference was the one with the lowest validation loss to ensure a generalizable model which is not overfitted on the training data.
 
+| Iteration | Epoch | Lowest validation Loss |
+| --- | --- | --- |
+| 1 | 27 | 0.8429 |
+| 2 | 28 | 0.7782 |
+| 3 | 28 | 0.7704 |
+
 <div align="center">
 
   <img width="1498" height="661" alt="training_validation_loss_it3" src="https://github.com/user-attachments/assets/945d2811-f9aa-4e2b-b23b-334158e67a89" />
@@ -98,3 +104,10 @@ Similar training-validation loss curve pattern for all three iterations (example
   *Figure 2: Training-validation loss curve for iteration 3.*
 
 </div>
+
+## Future improvement
+- **Elevation gradient additional sampling**: the high misclassification of rock as grassland suggests that there are not enough representative samples of rock in the alpine areas. There are many types of grasslands and alpine ones differ from the plateau grasslands which are more managed and sturcturally similar to croplands.
+- **Water class handling**: water will be either masked out from the model using automatic digitization from old topographic maps (e.g. Siegfried maps or Old National Maps). Water bodies haven't changed too much in the past 100 years, and if they changed, that is accurately captured in the topographic maps, compared to e.g. wetlands, which are more prone to interpretation issues or differing map scales.
+- **Wetland handling**: more variants will be considered:
+  - Merging them into the grasslands and reclassifying grasslands using other ML models to integrate variables such as topographic wetness index (TWI), or climatic variables, or distance to water bodies
+  - Using training data obtained digitized topographic maps to train a binary _wetland/non-wetland_ model - issue: differing accuracy across Switzerland, 
