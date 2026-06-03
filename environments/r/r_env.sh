@@ -18,7 +18,7 @@ conda env remove -n $ENV_NAME -y || true
 
 echo "Creating environment..."
 
-conda env create -f geo_env_r.yml
+conda env create -f environments/r/geo_env_r.yml
 
 echo "Done."
 
