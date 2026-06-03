@@ -104,6 +104,22 @@ Download data from https://huggingface.co/datasets/francescadragut/habitat_mappi
                     └── ...
 ```
 
+## Tile selection
+The model data was selected using random selection on a polygon grid. The grid was generated in QGIS using the extent of the Habitat Map of Switzerland raster, each grid tile of 512x512m. The tiles which were on the intersection of 2 maptiles were excluded to avoid merging tile parts or large NA areas. This was done using 
+
+Since the rasters have 1m spatial resolution, the size fits the 512x512px size required by U-Net. In R, the grid was intersected with the biogeographical regions of Switzerland. 
+
 ## Data preparation
 Data preparation consists of:
-- **Iteration 1**: clipping Habitat Map of Switzerland raster to the maptiles of 
+- **Iteration 1**:
+  - Clip Habitat Map of Switzerland raster to the orthophoto maptile footprint
+  - Clip all selected grid tiles within each orthophoto maptile and save them in the training, validation or test partition based on the split they belong to
+  - Clip masks on the extent of the tiles for each orthophoto maptile - clipped them on the tile extents and not on the polygon extents to ensure perfect match between tile-mask pixels
+- **Iteration 2**:
+  - Re-mask the Habitat Map of Switzerland using the NFI forest mask raster including both closed and open forests
+  - Clip the re-masked Habitat Map to the orthophoto maptile footprint
+  - Clip masks using the extent of the tiles obtained in the first iteration
+- **Iteration 3**:
+  - Re-mask the Habitat Map of Switzerland using the NFI forest mask raster including only closed forests
+  - Clip the re-masked Habitat Map to the orthophoto maptile footprint
+  - Clip masks using the extent of the tiles obtained in the first iteration
