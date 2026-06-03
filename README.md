@@ -56,7 +56,6 @@ Download data from https://huggingface.co/datasets/francescadragut/habitat_mappi
         │   │   ├── forest_mask_it1.gpkg
         │   │   ├── forest_mask_it1.tif
         │   │   └── ...
-        │   │
         │   ├── habitat_map_maptiles/
         │   │   ├── maptiles_it1/
         │   │   │   ├── habitat_map_tile_1011.tif
@@ -64,12 +63,11 @@ Download data from https://huggingface.co/datasets/francescadragut/habitat_mappi
         │   │   ├── maptiles_it2/
         │   │   │   └── ...
         │   │   └── maptiles_it3/
-        │   │       └── ...
-        │   │
+        │   │       └── ...        
         │   ├── HabitatMap_it1.tif
         │   ├── HabitatMap_it2.tif
-        │   └── HabitatMap_it3.tif
-        │
+        │   ├── HabitatMap_it3.tif
+        │   └── mapsheet_grid.gpkg
         └── model_data/
             ├── masks_it1/
             │   ├── test/
@@ -79,7 +77,6 @@ Download data from https://huggingface.co/datasets/francescadragut/habitat_mappi
             │   │   └── ...
             │   └── validation/
             │       └── ...
-            │
             ├── masks_it2/
             │   ├── test/
             │   │   ├── mask_it2_15_374_1031_22.tif
@@ -88,7 +85,6 @@ Download data from https://huggingface.co/datasets/francescadragut/habitat_mappi
             │   │   └── ...
             │   └── validation/
             │       └── ...
-            │
             ├── masks_it3/
             │   ├── test/
             │   │   ├── mask_it3_15_374_1031_22.tif
@@ -97,7 +93,6 @@ Download data from https://huggingface.co/datasets/francescadragut/habitat_mappi
             │   │   └── ...
             │   └── validation/
             │       └── ...
-            │
             └── tiles/
                 ├── test/
                 │   ├── test_15_374_1031_22.tif
@@ -108,3 +103,6 @@ Download data from https://huggingface.co/datasets/francescadragut/habitat_mappi
                     └── ...
 ```
 
+## Data preparation
+Data preparation consists of:
+- **Iteration 1**: clipping Habitat Map of Switzerland raster to the maptiles of 
