@@ -63,7 +63,8 @@ Download data from https://huggingface.co/datasets/francescadragut/habitat_mappi
         │   │   ├── maptiles_it2/
         │   │   │   └── ...
         │   │   └── maptiles_it3/
-        │   │       └── ...        
+        │   │       └── ... 
+        │   ├── grid_selection_partition.gpkg       
         │   ├── HabitatMap_it1.tif
         │   ├── HabitatMap_it2.tif
         │   ├── HabitatMap_it3.tif
