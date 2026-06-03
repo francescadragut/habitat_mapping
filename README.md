@@ -59,13 +59,32 @@ The National Forest Inventory is a project of the WSL in collaboration with the 
 
 ### Iteration 1
 - **Confusion matrix visualization**:
+  - Most water classified as rock
+  - Most wetlands classified as grasslands
+  - Confusion between rock and grasslands
+  - Shrubs classified as grasslands and forests
+  - Highest accuracy in forest classification, confusion with grasslands and rock
+  - No pioneer vegetation detected, mostly classified as grasslands
+  - High amount of cropland classified as grasslands, but not the other way around
+  - Built habitats classified as grasslands
 <img width="1000" alt="confusion_matrix_it1" src="https://github.com/user-attachments/assets/0c88f645-226d-419f-ade0-4a1b7c4d7289" />
 
 ### Iteration 2
 - **Confusion matrix visualization**:
+  - Most water and wetlands still classified as grassland
+  - Less grassland misclassified as rock, but more rock misclassified as grassland
+  - Most shrubbery misclassified as grassland
+  - More forest misclassified as grassland compared to iteration 1
+  - Cropland still misclassified as grassland
+  - Built habitats still misclassified as grassland
 <img width="1000" alt="confusion_matrix_it2" src="https://github.com/user-attachments/assets/1dfd80f7-828b-4214-8d22-9473d95a181a" />
 
 ### Iteration 3
 - **Confusion matrix visualization**:
+  - Increased accuracy for water and built habitats classification i.e. the dense forest remasking improved classification
+  - Same patterns for wetlands, pioneer vegetation and shrubbery as in iteration 1 and 2
+  - Same pattern for rock misclassified as grassland compared to iteration 2
+  - Increased misclassification of grassland as cropland, but decreased misclassification of cropland as grassland
+  - 
 <img width="1000" alt="confusion_matrix_it3" src="https://github.com/user-attachments/assets/e2833e0a-167f-4076-821a-e77c8b1e8a1c" />
 
