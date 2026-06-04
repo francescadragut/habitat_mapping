@@ -105,7 +105,7 @@ Download data from https://huggingface.co/datasets/francescadragut/habitat_mappi
 ```
 
 ## Tile selection
-The model data was selected using random selection on a polygon grid. The grid was generated in QGIS using the extent of the Habitat Map of Switzerland raster, each grid tile of 512x512m. The tiles which were on the intersection of 2 maptiles were excluded to avoid merging tile parts or large NA areas. This was done using 
+The model data was selected using random selection on a polygon grid. The grid was generated in QGIS using the extent of the Habitat Map of Switzerland raster, each grid tile of 512x512m. Eligible tiles were selected by comparing to the features from the 512x512m grid to the orthophoto maptile grid. The selection was done using ```Vector selection``` in QGIS and the ```are within``` function. This ensured that only tiles covering 100% of a certain maptile are considered. This eliminated tiles which were on the border of Switzerland or on the border of multiple maptiles, to avoid large NA areas or subsequent merging of tiles spanning on multiple orthophoto maptiles.
 
 Since the rasters have 1m spatial resolution, the size fits the 512x512px size required by U-Net. In R, the grid was intersected with the biogeographical regions of Switzerland. 
 
