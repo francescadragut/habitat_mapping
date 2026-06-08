@@ -52,23 +52,7 @@ Download data from https://huggingface.co/datasets/francescadragut/habitat_mappi
 └── habitat_mapping/
     └── input/
         ├── data/
-        │   ├── forest_data/
-        │   │   ├── forest_mask_it1.gpkg
-        │   │   ├── forest_mask_it1.tif
-        │   │   └── ...
-        │   ├── habitat_map_maptiles/
-        │   │   ├── maptiles_it1/
-        │   │   │   ├── habitat_map_tile_1011.tif
-        │   │   │   └── ...
-        │   │   ├── maptiles_it2/
-        │   │   │   └── ...
-        │   │   └── maptiles_it3/
-        │   │       └── ... 
-        │   ├── grid_selection_partition.gpkg       
-        │   ├── HabitatMap_it1.tif
-        │   ├── HabitatMap_it2.tif
-        │   ├── HabitatMap_it3.tif
-        │   └── mapsheet_grid.gpkg
+        │   └── grid_selection_partition.gpkg       
         └── model_data/
             ├── masks_it1/
             │   ├── test/
