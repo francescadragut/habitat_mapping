@@ -45,7 +45,7 @@ Create R environment using:\
 All other scripts activate the correct environments at runtime. 
 
 ## Project data download
-Download data from https://huggingface.co/datasets/francescadragut/habitat_mapping. The dataset includes a zip archive of the input and output data. Unzip the folders and add them to the root directory. The project input folder structure is:
+Download data from https://huggingface.co/datasets/francescadragut/habitat_mapping. The dataset includes a zip archive of the input and output data. Unzip the folders and add them to the root directory. The directory only includes data needed for the model, which is the tile-mask pairs. The project input folder structure is:
 
 ```
 .
